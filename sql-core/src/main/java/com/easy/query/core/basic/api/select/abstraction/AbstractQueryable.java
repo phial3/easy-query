@@ -427,7 +427,7 @@ public abstract class AbstractQueryable<T1> implements Queryable<T1> {
                             continue;
                         }
                         if (val instanceof String) {
-                            if (!q.allowEmptyStrings()) {
+                            if (StringUtil.isBlank(String.valueOf(val))&&!q.allowEmptyStrings()) {
                                 continue;
                             }
                         }
